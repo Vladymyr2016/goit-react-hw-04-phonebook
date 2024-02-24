@@ -9,7 +9,8 @@ const FormInput = ({ addContact }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    addContact(state.name, state.number);
+    addContact({ state });
+    setState(prevState => ({ ...prevState, name: '', number: '' }));
   };
 
   const handleChange = e => {
