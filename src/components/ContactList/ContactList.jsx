@@ -2,19 +2,19 @@ import React from 'react';
 import Contact from 'components/Contact/Contact';
 
 const ContactList = ({ contacts, onDeleteContact, filter }) => {
-  const newArr = contacts.filter(man =>
-    man.name.toLowerCase().includes(filter.toLowerCase())
+  const newArr = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
   );
 
   return (
     <>
       <ul>
         <div>
-          {newArr.map(man => {
+          {newArr.map(contact => {
             return (
               <Contact
-                key={man.id}
-                {...man}
+                key={contact.id}
+                {...contact}
                 onDeleteContact={onDeleteContact}
               />
             );

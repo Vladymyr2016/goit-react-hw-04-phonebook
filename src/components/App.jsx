@@ -24,18 +24,22 @@ const App = () => {
     }
   }, []);
 
-  const addContact = man => {
-    const isNameInclud = contacts.some(contact => contact.name === man.name);
+  const addContact = contact => {
+    const isNameInclud = contacts.some(
+      contact => contact.name === contact.name
+    );
+    console.log(contact);
+
     isNameInclud
-      ? alert(`${man.name} already in contacts`)
+      ? alert(`${contact.name} already in contacts`)
       : setContacts(prev => [
           ...prev,
-          { id: nanoid(), name: man.name, number: man.number },
+          { id: nanoid(), name: contact.name, number: contact.number },
         ]);
   };
 
   const handleDeleteContact = id => {
-    setContacts(prev => prev.filter(man => man.id !== id));
+    setContacts(prev => prev.filter(contact => contact.id !== id));
   };
 
   const handleFilterContact = value => {
@@ -69,14 +73,3 @@ const App = () => {
 };
 
 export default App;
-
-// class App extends Component {
-
-//
-//   render() {
-//     const { filter } = this.state;
-
-//   }
-// }
-
-// export default App;

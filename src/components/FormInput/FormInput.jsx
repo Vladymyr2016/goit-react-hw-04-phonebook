@@ -12,7 +12,7 @@ const FormInput = ({ addContact }) => {
     addContact({ state });
     setState(prevState => ({ ...prevState, name: '', number: '' }));
   };
-
+  console.log(state);
   const handleChange = e => {
     setState({ [e.target.name]: e.target.value });
   };
