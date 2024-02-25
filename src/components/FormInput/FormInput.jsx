@@ -9,12 +9,12 @@ const FormInput = ({ addContact }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    addContact({ state });
+    addContact(state);
     setState(prevState => ({ ...prevState, name: '', number: '' }));
   };
   console.log(state);
   const handleChange = e => {
-    setState({ [e.target.name]: e.target.value });
+    setState({ ...state, [e.target.name]: e.target.value });
   };
 
   return (

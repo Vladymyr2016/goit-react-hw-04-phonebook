@@ -25,9 +25,7 @@ const App = () => {
   }, []);
 
   const addContact = contact => {
-    const isNameInclud = contacts.some(
-      contact => contact.name === contact.name
-    );
+    const isNameInclud = contacts.some(el => el.name === contact.name);
     console.log(contact);
 
     isNameInclud
